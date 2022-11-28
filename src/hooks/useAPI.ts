@@ -1,35 +1,19 @@
 import { useCallback } from 'react';
-import { toast } from 'react-toastify';
+import { nanoid } from 'nanoid';
 
-import { Task } from '../types';
+import { User } from '../types';
 
 const useAPI = () => {
-  const getTasks = useCallback(async (): Promise<Task[]> => {
-    try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/tasks`, {
-        method: 'GET',
-        mode: 'cors',
-        credentials: 'include',
-      });
+  const getUser = useCallback(async (email: string, password: string): Promise<User> => {
+    console.log('Emulating a sign in for:', email, 'with password:', password);
 
-      if (response.status !== 200) {
-        toast(`API request failed`, { type: 'error' });
-
-        return [];
-      }
-
-      return await response.json();
-    } catch (e) {
-      console.log(e);
-
-      toast(`API request failed`, { type: 'error' });
-    }
-
-    return [];
+    return new Promise((resolve) => {
+      setTimeout(resolve, 1000, { id: nanoid(), email });
+    });
   }, []);
 
   return {
-    getTasks,
+    getUser
   };
 };
 

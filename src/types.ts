@@ -1,8 +1,4 @@
-export type Task = {
-  description: string;
-  done: boolean;
-};
-
-export type State = {
-  tasks: Task[];
+export type User = {
+  id: string;
+  email: string;
 };
