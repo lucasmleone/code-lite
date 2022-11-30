@@ -17,7 +17,7 @@ const Login: FC = () => {
         To the VINCI code test. Please have a look at the README.md.
         <br />
         <br />
-        Good luck!
+        Good  luck!
         <br />
         <i>- VINCI</i>
         <form
