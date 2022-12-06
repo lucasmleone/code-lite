@@ -1,9 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@font-face {
+  font-family: 'OakesGrotesk';
+  font-weight: 400;
+  src: url('../public/fonts/OakesGroteskRegular.ttf') format(truetype);
+}
 @layer base {
-  body {
-    @apply bg-gray-800;
+  html {
+    font-family: 'OakesGrotesk';
   }
 }
